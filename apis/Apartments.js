@@ -1,18 +1,30 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: './uploads/',
+  filename: function (req, file, cb) {
+    cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname);
+  }
+});
+const upload = multer({ storage: storage });
 
 const Apartment = require('../models/Apartment');
 //get all apartments
 router.get('/', (req, res) => {
   Apartment.find().then(apartments => res.json(apartments));
 });
+
 //add apartment
-router.post('/', (req, res) => {
+router.post('/', upload.single('apartmentImage'), (req, res) => {
+  console.log(req.file);
   const newApartment = Apartment({
     title: req.body.title,
     amount: req.body.amount,
     specification: req.body.specification,
-    location: req.body.location
+    location: req.body.location,
+    apartmentImage: req.file.path
   });
   newApartment.save().then(apartment => res.json(apartment));
 });

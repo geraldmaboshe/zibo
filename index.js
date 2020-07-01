@@ -17,6 +17,7 @@ mongoose
 
 app.use('/api/apartments', apartments);
 
+app.use('/uploads', express.static('uploads'));
 //serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

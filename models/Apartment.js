@@ -16,6 +16,10 @@ const ApartmentSchema = new Schema({
   },
   location: {
     type: String
+  },
+  apartmentImage: {
+    type: String,
+    required: true
   }
 });
 module.exports = Apartment = mongoose.model('apartment', ApartmentSchema);
