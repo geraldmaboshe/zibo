@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
+import Test from './components/Test';
 import './styles/styles.scss';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <Header />
       <Content />
+      <Test />
       <Footer />
     </div>
   );

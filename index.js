@@ -2,10 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-
+const cors = require('cors');
 const apartments = require('./apis/Apartments');
-
 const app = express();
+
+app.use(cors());
 app.use(bodyParser.json());
 
 const db = require('./config/keys').mongoURI;
