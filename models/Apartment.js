@@ -15,7 +15,8 @@ const ApartmentSchema = new Schema({
     required: true
   },
   location: {
-    type: String
+    type: String,
+    required: true
   },
   apartmentImage: {
     type: String,

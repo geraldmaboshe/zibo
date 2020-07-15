@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
 
 //add apartment
 router.post('/', upload.single('apartmentImage'), (req, res) => {
-  console.log(req.file);
   const newApartment = Apartment({
     title: req.body.title,
     amount: req.body.amount,
@@ -29,8 +28,8 @@ router.post('/', upload.single('apartmentImage'), (req, res) => {
   newApartment.save().then(apartment => res.json(apartment));
 });
 //update
-router.put('/:id', (req, res) => {
-  Apartment.findByIdAndUpdate(req.params.id, req.body)
+router.put('/:id', upload.single('apartmentImage'), (req, res) => {
+  Apartment.findByIdAndUpdate(req.params.id, req.body, req.file)
     .then(() => res.json({ success: true }))
     .catch(error => res.status(404).json({ success: false }));
 });
