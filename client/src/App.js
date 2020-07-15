@@ -1,19 +1,32 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
-import Header from './components/Header';
+import NavBar from './layout/NavBar';
+import Header from './layout/Header';
 import Content from './components/Content';
-import Footer from './components/Footer';
-import Test from './components/Test';
+import Footer from './layout/Footer';
 import './styles/styles.scss';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import ApartmentDetail from './components/ApartmentDetail';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Header />
-      <Content />
-      <Test />
+      <BrowserRouter>
+        <Switch>
+          <Route
+            exact
+            path={'/'}
+            render={() => {
+              return <Redirect to="/apartments" />;
+            }}
+          />
+          <Route exact path="/apartments" component={Content} />
+          <Route exact path="/apartments/:id" component={ApartmentDetail} />
+        </Switch>
+      </BrowserRouter>
+
       <Footer />
     </div>
   );
