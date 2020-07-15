@@ -9,7 +9,7 @@ export default class Content extends Component {
     };
   }
   componentDidMount() {
-    fetch('https://zibo-estates-fullstack.herokuapp.com/api/apartments')
+    fetch('https://zibo.herokuapp.com/api/apartments')
       .then(res => res.json())
       .then(data => this.setState({ apartments: data }));
   }
@@ -18,7 +18,7 @@ export default class Content extends Component {
     return (
       <div className="cards">
         {this.state.apartments.map(apartment => (
-          <div key={apartment.id}>
+          <div key={apartment._id}>
             <Apartments apartment={apartment} />
           </div>
         ))}

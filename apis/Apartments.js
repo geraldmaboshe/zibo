@@ -29,7 +29,27 @@ router.post('/', upload.single('apartmentImage'), (req, res) => {
 });
 //update
 router.put('/:id', upload.single('apartmentImage'), (req, res) => {
-  Apartment.findByIdAndUpdate(req.params.id, req.body, req.file)
+  const id = req.params.id;
+  const body = req.body;
+  const title = body.title;
+  const amount = body.amount;
+  const specification = body.specification;
+  const location = body.location;
+  const apartmentImage = req.file.path;
+
+  Apartment.findOneAndUpdate(
+    id,
+    {
+      $set: {
+        title,
+        amount,
+        specification,
+        location,
+        apartmentImage
+      }
+    },
+    { new: true }
+  )
     .then(() => res.json({ success: true }))
     .catch(error => res.status(404).json({ success: false }));
 });

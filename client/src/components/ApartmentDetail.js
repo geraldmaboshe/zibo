@@ -12,9 +12,7 @@ export default class apartmentDetail extends Component {
   componentDidMount() {
     const apartmentId = this.props.match.params.id;
     this.setState({ apartmentId });
-    fetch(
-      `https://zibo-estates-fullstack.herokuapp.com/api/apartments/${apartmentId}`
-    )
+    fetch(`https://zibo.herokuapp.com/api/apartments/${apartmentId}`)
       .then(res => res.json())
       .then(data => this.setState({ apartmentDetail: data }));
   }
@@ -26,7 +24,7 @@ export default class apartmentDetail extends Component {
         <Row>
           <Col>
             <img
-              src={`https://zibo-estates-fullstack.herokuapp.com/${apartmentDetail?.apartmentImage}`}
+              src={`https://zibo.herokuapp.com/${apartmentDetail?.apartmentImage}`}
               alt={apartmentDetail?.title}
               width="200px"
               height="150px"
