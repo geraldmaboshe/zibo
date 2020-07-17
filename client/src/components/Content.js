@@ -16,9 +16,9 @@ export default class Content extends Component {
 
   render() {
     return (
-      <div className="cards">
+      <div className="row">
         {this.state.apartments.map(apartment => (
-          <div key={apartment._id}>
+          <div key={apartment._id} className="col">
             <Apartments apartment={apartment} />
           </div>
         ))}

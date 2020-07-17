@@ -1,6 +1,15 @@
 import React from 'react';
-import HeaderPicture from './../images/header.jpg';
 
 export default function Header() {
-  return <img src={HeaderPicture} height="400" width="100%" alt="header"></img>;
+  return (
+    <div className="header">
+      <span className="header-content">
+        <p className="zibo-header">Zibo</p>
+        <p className="zibo-description">
+          Your dream home is here <br />
+          There is no place like home
+        </p>
+      </span>
+    </div>
+  );
 }
