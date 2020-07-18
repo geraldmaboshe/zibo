@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Apartments from './Apartments';
+import Apartments from './Apartment';
 
 export default class Content extends Component {
   constructor(props) {

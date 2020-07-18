@@ -1,35 +1,12 @@
-.cards {
-  display: flex;
+.row {
+  font-size: 4.2rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 4rem;
 
-  //   justify-content: space-around;
-}
-.card1 {
-  color: white;
-  width: 100%;
-  padding: 10px;
-}
-.card2 {
-  color: white;
-  width: 100%;
-  padding: 10px;
-}
-.card3 {
-  color: white;
-  width: 100%;
-  padding: 10px;
-}
-.card4 {
-  color: white;
-  width: 100%;
-  padding: 10px;
-}
-.card5 {
-  color: white;
-  width: 100%;
-  padding: 10px;
-}
-.card5 {
-  color: white;
-  width: 100%;
-  padding: 10px;
+  .col {
+    max-width: 43rem;
+  }
 }
