@@ -23,7 +23,13 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar fixed="top" expand="lg" variant="light" bg="light">
+        <Navbar
+          fixed="top"
+          expand="lg"
+          variant="light"
+          bg="light"
+          className="zibo-navbar"
+        >
           <Container>
             <NavbarBrand href="/">Zibo</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />

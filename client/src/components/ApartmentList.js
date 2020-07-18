@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Apartments from './Apartment';
+import Apartment from './Apartment';
+import Header from '../layout/Header';
 
 export default class Content extends Component {
   constructor(props) {
@@ -16,12 +17,13 @@ export default class Content extends Component {
 
   render() {
     return (
-      <div className="row">
-        {this.state.apartments.map(apartment => (
-          <div key={apartment._id} className="col">
-            <Apartments apartment={apartment} />
-          </div>
-        ))}
+      <div>
+        <Header />
+        <div className="row">
+          {this.state.apartments.map(apartment => {
+            return <Apartment apartment={apartment} />;
+          })}
+        </div>
       </div>
     );
   }

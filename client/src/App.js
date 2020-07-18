@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from './layout/NavBar';
-import Header from './layout/Header';
-import Content from './components/Content';
+import ApartmentList from './components/ApartmentList';
 import Footer from './layout/Footer';
 import './styles/styles.scss';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
@@ -10,9 +9,9 @@ import ApartmentDetail from './components/ApartmentDetail';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <NavBar />
-      <Header />
+
       <BrowserRouter>
         <Switch>
           <Route
@@ -22,7 +21,7 @@ function App() {
               return <Redirect to="/apartments" />;
             }}
           />
-          <Route exact path="/apartments" component={Content} />
+          <Route exact path="/apartments" component={ApartmentList} />
           <Route exact path="/apartments/:id" component={ApartmentDetail} />
         </Switch>
       </BrowserRouter>
