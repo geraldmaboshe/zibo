@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Apartment from './Apartment';
 import Header from '../layout/Header';
+import { Row } from 'react-bootstrap';
 
-export default class Content extends Component {
+export default class ApartmentList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,10 +20,12 @@ export default class Content extends Component {
     return (
       <div>
         <Header />
-        <div className="row">
-          {this.state.apartments.map(apartment => {
-            return <Apartment apartment={apartment} />;
-          })}
+        <div>
+          <ul className="rowk">
+            {this.state.apartments.map(apartment => {
+              return <Apartment apartment={apartment} />;
+            })}
+          </ul>
         </div>
       </div>
     );
