@@ -17,7 +17,6 @@ export default class apartmentDetail extends Component {
       .then(data => this.setState({ apartmentDetail: data }));
   }
   render() {
-    console.log(this.state.apartmentDetail);
     const { apartmentDetail } = this.state;
     return (
       <Container fluid>

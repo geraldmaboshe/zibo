@@ -4,11 +4,7 @@ import { Col } from 'react-bootstrap';
 const Apartment = props => {
   return (
     <li className="apartment">
-      <Link
-        style={{}}
-        className="link"
-        to={`/apartments/${props.apartment._id}`}
-      >
+      <Link className="link" to={`/apartments/${props.apartment._id}`}>
         <img
           alt={props.apartment.title}
           className="apartment-image"
