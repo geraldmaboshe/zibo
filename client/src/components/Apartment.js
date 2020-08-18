@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card, CardImg, CardTitle, CardText } from 'reactstrap';
 const Apartment = props => {
   return (
-    <li className="apartment">
+    <Card className="apartment">
       <Link className="link" to={`/apartments/${props.apartment._id}`}>
-        <img
-          alt={props.apartment.title}
+        <CardImg
+          top
           className="apartment-image"
           src={`https://zibo.herokuapp.com/${props.apartment.apartmentImage}`}
+          alt={props.apartment.title}
         />
-        <div className="title">{props.apartment.title}</div>
+        <CardTitle>{props.apartment.title}</CardTitle>
+        <CardText>{props.apartment.amount}</CardText>
       </Link>
-    </li>
+    </Card>
   );
 };
 export default Apartment;

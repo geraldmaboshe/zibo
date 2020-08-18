@@ -20,11 +20,9 @@ export default class ApartmentList extends Component {
       <div>
         <Header />
         <div>
-          <ul className="rowk">
-            {this.state.apartments.map(apartment => {
-              return <Apartment apartment={apartment} />;
-            })}
-          </ul>
+          {this.state.apartments.map(apartment => {
+            return <Apartment apartment={apartment} />;
+          })}
         </div>
       </div>
     );
