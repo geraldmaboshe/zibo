@@ -10,7 +10,6 @@ function App() {
   return (
     <div>
       <NavBar />
-
       <BrowserRouter>
         <Switch>
           <Route

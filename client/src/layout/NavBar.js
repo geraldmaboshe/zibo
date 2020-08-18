@@ -6,9 +6,9 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container
+  Container,
+  Navbar
 } from 'reactstrap';
-import { Navbar } from 'react-bootstrap';
 
 class NavBar extends Component {
   state = {
@@ -23,13 +23,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar
-          fixed="top"
-          expand="lg"
-          variant="light"
-          bg="light"
-          className="zibo-navbar"
-        >
+        <Navbar color="light" light expand="md" fixed="top">
           <Container>
             <NavbarBrand href="/">Zibo</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />

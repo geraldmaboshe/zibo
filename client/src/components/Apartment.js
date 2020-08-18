@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Col } from 'react-bootstrap';
 const Apartment = props => {
   return (
     <li className="apartment">

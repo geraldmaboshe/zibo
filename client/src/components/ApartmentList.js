@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Apartment from './Apartment';
 import Header from '../layout/Header';
-import { Row } from 'react-bootstrap';
 
 export default class ApartmentList extends Component {
   constructor(props) {
