@@ -19,7 +19,7 @@ export default class ApartmentList extends Component {
     return (
       <div>
         <Header />
-        <div>
+        <div className="card-container">
           {this.state.apartments.map(apartment => {
             return <Apartment apartment={apartment} />;
           })}

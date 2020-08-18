@@ -1,28 +1,8 @@
-ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-position: inside;
-  padding-left: 0;
-  list-style: none;
-}
-
-.apartment {
-  height: 40vh;
-  flex-grow: 1;
-}
-
-img {
-  max-height: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  vertical-align: bottom;
-}
-.rowk {
-  width: 100vw;
-}
-.apartment:hover .apartment-image {
-  opacity: 0.5;
-}
-.apartment:hover .title {
-  opacity: 0.5;
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin-left: 20px;
+  margin-right: 20px;
 }
